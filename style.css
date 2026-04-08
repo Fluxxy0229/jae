@@ -567,7 +567,7 @@ section {
 .contact-form-wrapper {
   background: #fff;
   padding: 50px;
-  border-radius: 28px;
+  /* border-radius: 28px; */
   box-shadow: 0 24px 80px rgba(70, 72, 116, 0.1);
 }
 
