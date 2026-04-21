@@ -1,14 +1,9 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Blog</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header>
@@ -23,24 +18,16 @@
 
         <ul class="nav-links" id="navLinks">
           <li>
-            <a href="#home" class="nav-item active"
-              ><i class="fa fa-home"></i> Home</a
-            >
+            <a href="#home" class="nav-item active"><i class="fa fa-home"></i> Home</a>
           </li>
           <li>
-            <a href="#about" class="nav-item"
-              ><i class="fa fa-user"></i> About</a
-            >
+            <a href="#about" class="nav-item"><i class="fa fa-user"></i> About</a>
           </li>
           <li>
-            <a href="#projects" class="nav-item"
-              ><i class="fa fa-briefcase"></i> Projects</a
-            >
+            <a href="#projects" class="nav-item"><i class="fa fa-briefcase"></i> Projects</a>
           </li>
           <li>
-            <a href="#contact" class="nav-item"
-              ><i class="fa fa-envelope"></i> Contact Me</a
-            >
+            <a href="#contact" class="nav-item"><i class="fa fa-envelope"></i> Contact Me</a>
           </li>
         </ul>
       </nav>
@@ -51,9 +38,9 @@
         <div class="hero-content">
           <p class="hero-location">Isabela, PH</p>
           <h1>
-            Hi, I am <br />
-            <span class="hero-highlight">Romolo Jae L. Taccac Jr.</span><br />
-            BSIT Student<br />
+            Hi, I am <br>
+            <span class="hero-highlight">Romolo Jae L. Taccac Jr.</span><br>
+            BSIT Student<br>
             <span class="hero-highlight">Aspiring Web Developer</span>
           </h1>
           <p class="hero-subtitle">
@@ -88,15 +75,16 @@
 
           <ul class="about-links">
             <li>
-              <a href="#address"
-                ><span>Address: City of Ilagan, Isabela</span></a
-              >
+              <p><span>Address: City of Ilagan, Isabela</span>
+            </p></li>
+            <li>
+              <p><span>Birthdate: April 10, 2003</span></p>
             </li>
             <li>
-              <a href="#birthdate"><span>Birthdate: April 10, 2003</span></a>
+              <p><span>Age: 22</span></p>
             </li>
             <li>
-              <a href="#age"><span>Age: 22</span></a>
+              <button class="about-links-btn" id="seeMoreBtn">See More About Me</button>
             </li>
           </ul>
         </div>
@@ -111,28 +99,28 @@
           <p class="project-label">Project 1</p>
           <h3 class="project-category">Calendar Planner</h3>
           <div class="project-line"></div>
-          <img src="images/calendar.jpg" alt="Project 1" />
+          <img src="images/calendar.jpg" alt="Project 1">
         </div>
 
         <div class="project-card">
           <p class="project-label">Project 2</p>
           <h3 class="project-category">Quiz App</h3>
           <div class="project-line"></div>
-          <img src="images/quiz.jpg" alt="Project 2" />
+          <img src="images/quiz.jpg" alt="Project 2">
         </div>
 
         <div class="project-card">
           <p class="project-label">Project 3</p>
           <h3 class="project-category">Task Manager</h3>
           <div class="project-line"></div>
-          <img src="images/task.jpg" alt="Project 3" />
+          <img src="images/task.jpg" alt="Project 3">
         </div>
 
         <div class="project-card">
           <p class="project-label">Project 4</p>
           <h3 class="project-category">Expense Tracker</h3>
           <div class="project-line"></div>
-          <img src="images/expense tracker.jpg" alt="Project 4" />
+          <img src="images/expense tracker.jpg" alt="Project 4">
         </div>
       </div>
       <div class="line"></div>
@@ -151,6 +139,86 @@
         </p>
       </div>
     </section>
+
+    <div id="aboutModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">×</span>
+        
+        <div class="modal-body">
+          <div class="modal-description">
+            <h2>More About Me</h2>
+            <p>
+              Some of my favorite moments come from traveling—whether it’s the cool breeze of Baguio City or the relaxing vibes of La Union. 
+              I enjoy exploring new places, trying out different foods, and capturing simple memories along the way.
+            </p>
+            <p>
+              From street food discoveries to cozy cafés, every trip gives me something new to appreciate. 
+              Traveling isn’t just about the destination for me—it’s about the experience, the people, and the little stories behind each moment.
+            </p>
+            <p>
+              Nowadays, I enjoy exploring and making time for my hobbies—
+              spending time doing what I love, exploring, and creating memories worth sharing.
+            </p>
+          </div>
+
+          <div class="slideshow-container">
+            <div class="slideshow-wrapper">
+              <div class="slide fade">
+                <img src="images/A.jpg" alt="Photo A">
+              </div>
+              <div class="slide fade">
+                <img src="images/B.jpg" alt="Photo B">
+              </div>
+              <div class="slide fade">
+                <img src="images/C.jpg" alt="Photo C">
+              </div>
+              <div class="slide fade">
+                <img src="images/D.jpg" alt="Photo D">
+              </div>
+              <div class="slide fade">
+                <img src="images/E.jpg" alt="Photo E">
+              </div>
+              <div class="slide fade">
+                <img src="images/F.jpg" alt="Photo F">
+              </div>
+              <div class="slide fade">
+                <img src="images/G.jpg" alt="Photo G">
+              </div>
+              <div class="slide fade">
+                <img src="images/H.jpg" alt="Photo H">
+              </div>
+              <div class="slide fade">
+                <img src="images/I.jpg" alt="Photo I">
+              </div>
+              <div class="slide fade">
+                <img src="images/J.jpg" alt="Photo J">
+              </div>
+              <div class="slide fade">
+                <img src="images/K.jpg" alt="Photo K">
+              </div>
+              <div class="slide fade">
+                <img src="images/L.jpg" alt="Photo L">
+              </div>
+            </div>
+
+            <div class="slideshow-dots">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+              <span class="dot" onclick="currentSlide(5)"></span>
+              <span class="dot" onclick="currentSlide(6)"></span>
+              <span class="dot" onclick="currentSlide(7)"></span>
+              <span class="dot" onclick="currentSlide(8)"></span>
+              <span class="dot" onclick="currentSlide(9)"></span>
+              <span class="dot" onclick="currentSlide(10)"></span>
+              <span class="dot" onclick="currentSlide(11)"></span>
+              <span class="dot" onclick="currentSlide(12)"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section id="contact">
       <div class="contact">
@@ -186,7 +254,7 @@
               <span class="icon"><i class="fa fa-facebook"></i></span>
               <div>
                 <strong>Facebook</strong>
-                <span><a href="https://www.facebook.com/share/188M6nW1fD/" style="text-decoration: none; color: white;">Jae Jae</span></a>
+                <span><a href="https://www.facebook.com/share/188M6nW1fD/" style="text-decoration: none; color: white;">Jae Jae</a></span>
               </div>
             </div>
           </div>
@@ -202,18 +270,18 @@
             <div class="contact-form-row">
               <label>
                 Full Name
-                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Name">
               </label>
               <label>
                 Email Address
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email">
               </label>
             </div>
 
             <div class="contact-form-row single">
               <label>
                 Subject
-                <input type="text" placeholder="Subject" />
+                <input type="text" placeholder="Subject">
               </label>
             </div>
 
@@ -234,7 +302,8 @@
 
     <footer class="footer">
       <blockquote>"Every fall is a chance to rise"</blockquote>
-      <p>&copy; Romolo Jae L. Taccac Jr 2026</p>
+      <p>© Romolo Jae L. Taccac Jr 2026</p>
     </footer>
-  </body>
-</html>
+  
+
+</body></html>

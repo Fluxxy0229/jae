@@ -295,7 +295,7 @@ section {
   text-align: left;
 }
 
-.about-links a {
+.about-links p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -310,15 +310,35 @@ section {
     transform 0.2s ease;
 }
 
-.about-links a:hover {
+.about-links p:hover {
   background: rgba(255, 255, 255, 0.16);
   transform: translateY(-1px);
 }
 
-.about-links a::before {
+.about-links p::before {
   content: "";
   font-size: 0.9rem;
   opacity: 0.85;
+}
+
+.about-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: rgba(8, 8, 8, 0.75);
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-links a:hover {
+  background: rgba(8, 8, 8, 0.50);
+  transform: translateY(-1px);
 }
 
 .projects {
@@ -567,7 +587,6 @@ section {
 .contact-form-wrapper {
   background: #fff;
   padding: 50px;
-  /* border-radius: 28px; */
   box-shadow: 0 24px 80px rgba(70, 72, 116, 0.1);
 }
 
@@ -688,6 +707,7 @@ section {
 
   .contact-form-wrapper {
     padding: 30px;
+    border-radius: 0;
   }
 }
 
@@ -720,4 +740,425 @@ section {
     padding: 40px 20px;
     font-size: 1.1rem;
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  position: relative;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #6552d0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: #00bfff;
+}
+
+.modal-body {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.modal-description {
+  text-align: left;
+}
+
+.modal-description h2 {
+  font-size: 2rem;
+  color: #6552d0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.modal-description p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+}
+
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeImage 0.8s ease-in-out;
+}
+
+@keyframes fadeImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade.active img {
+  animation: fadeImage 0.8s ease-in-out;
+}
+
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #6552d0;
+}
+
+.dot:hover {
+  background-color: #999;
+}
+
+.about-links-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: rgba(8, 8, 8, 0.75);
+  color: rgba(255, 255, 255, 0.95);
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-links-btn:hover {
+  background: rgba(8, 8, 8, 0.50);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    padding: 35px;
+    gap: 30px;
+  }
+
+  .modal-description h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-description p {
+    font-size: 0.95rem;
+  }
+
+  .slideshow-wrapper {
+    aspect-ratio: 16/9;
+  }
+
+  .slideshow-dots {
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    border-radius: 15px;
+  }
+
+  .modal-close {
+    right: 15px;
+    top: 15px;
+    font-size: 28px;
+  }
+
+  .modal-body {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .modal-description h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-description p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .slideshow-dots {
+    gap: 6px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  position: relative;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #6552d0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover { color: #00bfff; }
+
+.modal-body {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.modal-description { text-align: left; }
+
+.modal-description h2 {
+  font-size: 2rem;
+  color: #6552d0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.modal-description p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.slideshow-container { position: relative; width: 100%; }
+
+.slideshow-wrapper {
+  position: relative;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 15px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.slide { display: none; width: 100%; height: 100%; }
+
+.slide.active { display: flex; align-items: center; justify-content: center; }
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeImage 0.8s ease-in-out;
+}
+
+@keyframes fadeImage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active { background-color: #6552d0; }
+
+.dot:hover { background-color: #999; }
+
+.about-links-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: rgba(8, 8, 8, 0.75);
+  color: rgba(255, 255, 255, 0.95);
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-links-btn:hover {
+  background: rgba(8, 8, 8, 0.50);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .modal-body { grid-template-columns: 1fr; padding: 35px; gap: 30px; }
+  .modal-description h2 { font-size: 1.6rem; }
+  .modal-description p { font-size: 0.95rem; }
+  .slideshow-wrapper { aspect-ratio: 16/9; }
+  .slideshow-dots { gap: 8px; }
+  .dot { width: 10px; height: 10px; }
+}
+
+@media (max-width: 480px) {
+  .modal-content { width: 95%; border-radius: 15px; }
+  .modal-close { right: 15px; top: 15px; font-size: 28px; }
+  .modal-body { padding: 25px; gap: 20px; }
+  .modal-description h2 { font-size: 1.4rem; }
+  .modal-description p { font-size: 0.9rem; margin-bottom: 15px; }
+  .slideshow-dots { gap: 6px; }
+  .dot { width: 8px; height: 8px; }
 }
